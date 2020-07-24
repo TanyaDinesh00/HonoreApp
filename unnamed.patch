@@ -1,0 +1,327 @@
+Index: android/app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/app/build.gradle	(revision 50994c2eff7a0eb25e0561a41ea84cb5aaf16d4b)
++++ android/app/build.gradle	(date 1595605317403)
+@@ -39,7 +39,7 @@
+     defaultConfig {
+         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+         applicationId "com.tanyadinesh00.pihms"
+-        minSdkVersion 16
++        minSdkVersion 17
+         targetSdkVersion 28
+         versionCode flutterVersionCode.toInteger()
+         versionName flutterVersionName
+Index: pubspec.lock
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pubspec.lock	(revision 50994c2eff7a0eb25e0561a41ea84cb5aaf16d4b)
++++ pubspec.lock	(date 1595604162614)
+@@ -7,42 +7,42 @@
+       name: archive
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "2.0.11"
++    version: "2.0.13"
+   args:
+     dependency: transitive
+     description:
+       name: args
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.5.2"
++    version: "1.6.0"
+   async:
+     dependency: transitive
+     description:
+       name: async
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "2.4.0"
++    version: "2.4.1"
+   boolean_selector:
+     dependency: transitive
+     description:
+       name: boolean_selector
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.0.5"
++    version: "2.0.0"
+   charcode:
+     dependency: transitive
+     description:
+       name: charcode
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.1.2"
++    version: "1.1.3"
+   collection:
+     dependency: transitive
+     description:
+       name: collection
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.14.11"
++    version: "1.14.12"
+   convert:
+     dependency: transitive
+     description:
+@@ -56,7 +56,7 @@
+       name: crypto
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "2.1.3"
++    version: "2.1.4"
+   cupertino_icons:
+     dependency: "direct main"
+     description:
+@@ -69,6 +69,13 @@
+     description: flutter
+     source: sdk
+     version: "0.0.0"
++  flutter_inappwebview:
++    dependency: "direct dev"
++    description:
++      name: flutter_inappwebview
++      url: "https://pub.dartlang.org"
++    source: hosted
++    version: "4.0.0+4"
+   flutter_test:
+     dependency: "direct dev"
+     description: flutter
+@@ -92,7 +99,7 @@
+       name: image
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "2.1.4"
++    version: "2.1.12"
+   matcher:
+     dependency: transitive
+     description:
+@@ -107,6 +114,13 @@
+       url: "https://pub.dartlang.org"
+     source: hosted
+     version: "1.1.8"
++  mime:
++    dependency: transitive
++    description:
++      name: mime
++      url: "https://pub.dartlang.org"
++    source: hosted
++    version: "0.9.6+3"
+   path:
+     dependency: transitive
+     description:
+@@ -114,13 +128,20 @@
+       url: "https://pub.dartlang.org"
+     source: hosted
+     version: "1.6.4"
+-  pedantic:
++  permission_handler:
++    dependency: "direct dev"
++    description:
++      name: permission_handler
++      url: "https://pub.dartlang.org"
++    source: hosted
++    version: "5.0.1+1"
++  permission_handler_platform_interface:
+     dependency: transitive
+     description:
+-      name: pedantic
++      name: permission_handler_platform_interface
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.8.0+1"
++    version: "2.0.1"
+   petitparser:
+     dependency: transitive
+     description:
+@@ -155,7 +176,7 @@
+       name: quiver
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "2.0.5"
++    version: "2.1.3"
+   sky_engine:
+     dependency: transitive
+     description: flutter
+@@ -167,7 +188,7 @@
+       name: source_span
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "1.5.5"
++    version: "1.7.0"
+   stack_trace:
+     dependency: transitive
+     description:
+@@ -202,7 +223,7 @@
+       name: test_api
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "0.2.11"
++    version: "0.2.15"
+   typed_data:
+     dependency: transitive
+     description:
+@@ -245,6 +266,13 @@
+       url: "https://pub.dartlang.org"
+     source: hosted
+     version: "0.1.2"
++  uuid:
++    dependency: transitive
++    description:
++      name: uuid
++      url: "https://pub.dartlang.org"
++    source: hosted
++    version: "2.2.0"
+   vector_math:
+     dependency: transitive
+     description:
+@@ -258,7 +286,7 @@
+       name: xml
+       url: "https://pub.dartlang.org"
+     source: hosted
+-    version: "3.5.0"
++    version: "3.6.1"
+ sdks:
+-  dart: ">=2.4.0 <3.0.0"
++  dart: ">=2.7.0 <3.0.0"
+   flutter: ">=1.12.13+hotfix.5 <2.0.0"
+Index: pubspec.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pubspec.yaml	(revision 50994c2eff7a0eb25e0561a41ea84cb5aaf16d4b)
++++ pubspec.yaml	(date 1595604115247)
+@@ -29,6 +29,9 @@
+     sdk: flutter
+   url_launcher: ^5.5.0
+   flutter_webview_plugin: ^0.3.11
++  flutter_inappwebview: ^4.0.0+4
++  permission_handler: ^5.0.1+1
++
+ 
+ 
+ # For information on the generic Dart part of this file, see the
+Index: lib/main.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- lib/main.dart	(revision 50994c2eff7a0eb25e0561a41ea84cb5aaf16d4b)
++++ lib/main.dart	(date 1595603820256)
+@@ -1,30 +1,70 @@
++
++import 'dart:async';
+ import 'package:flutter/material.dart';
+-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
++import 'package:flutter_inappwebview/flutter_inappwebview.dart';
++import 'package:permission_handler/permission_handler.dart';
+ 
+ String url = "http://pihms.co.in/";
+ 
+-void main() => runApp(MyApp());
++Future main() async {
++  WidgetsFlutterBinding.ensureInitialized();
++
++  await Permission.camera.request();
++  await Permission.microphone.request();
+ 
+-class MyApp extends StatelessWidget {
++  runApp(MyApp());
++}
++
++class MyApp extends StatefulWidget {
++  @override
++  _MyAppState createState() => new _MyAppState();
++}
++
++class _MyAppState extends State<MyApp> {
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+-      title: 'PI-HMS',
+-      debugShowCheckedModeBanner: false,
+-      theme: ThemeData.dark(),
+-      routes: {
+-//        "/": (context) => Home(),
+-        "/": (context) => SafeArea(
+-              child: WebviewScaffold(
+-                url: url,
+-                withJavascript: true,
+-                withLocalStorage: true,
+-                withZoom: true,
+-                geolocationEnabled: true,
+-                //scrollBar: false,
+-              ),
+-            )
+-      },
++        home: InAppWebViewPage()
++    );
++  }
++}
++
++class InAppWebViewPage extends StatefulWidget {
++  @override
++  _InAppWebViewPageState createState() => new _InAppWebViewPageState();
++}
++
++class _InAppWebViewPageState extends State<InAppWebViewPage> {
++  InAppWebViewController _webViewController;
++
++  @override
++  Widget build(BuildContext context) {
++    return Scaffold(
++        appBar: AppBar(
++            title: Text("InAppWebView")
++        ),
++        body: Container(
++            child: Column(children: <Widget>[
++              Expanded(
++                child: Container(
++                  child: InAppWebView(
++                      initialUrl: url,
++                      initialOptions: InAppWebViewGroupOptions(
++                        crossPlatform: InAppWebViewOptions(
++                          mediaPlaybackRequiresUserGesture: false,
++                          debuggingEnabled: true,
++                        ),
++                      ),
++                      onWebViewCreated: (InAppWebViewController controller) {
++                        _webViewController = controller;
++                      },
++                      androidOnPermissionRequest: (InAppWebViewController controller, String origin, List<String> resources) async {
++                        return PermissionRequestResponse(resources: resources, action: PermissionRequestResponseAction.GRANT);
++                      }
++                  ),
++                ),
++              ),
++            ]))
+     );
+   }
+ }
+Index: android/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/app/src/main/AndroidManifest.xml	(revision 50994c2eff7a0eb25e0561a41ea84cb5aaf16d4b)
++++ android/app/src/main/AndroidManifest.xml	(date 1595604358342)
+@@ -5,6 +5,12 @@
+          In most cases you can leave this as-is, but you if you want to provide
+          additional functionality it is fine to subclass or reimplement
+          FlutterApplication and put your custom class here. -->
++    <uses-permission android:name="android.permission.INTERNET"/>
++    <uses-permission android:name="android.permission.CAMERA" />
++    <uses-permission android:name="android.permission.RECORD_AUDIO" />
++    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
++    <uses-permission android:name="android.permission.VIDEO_CAPTURE" />
++    <uses-permission android:name="android.permission.AUDIO_CAPTURE" />
+     <application
+         android:name="io.flutter.app.FlutterApplication"
+         android:label="PI-HMS"
