@@ -1,9 +1,10 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-String url = "http://pihms.co.in/";
+String url = "http://www.google.com/";
 //https://webcamtests.com/
 //http://pihms.co.in/
 Future main() async {
@@ -50,29 +51,34 @@ class _InAppWebViewPageState extends State<InAppWebViewPage> {
             Expanded(
               child: Container(
                 child: InAppWebView(
-                    initialUrl: url,
-                    initialOptions: InAppWebViewGroupOptions(
-                      crossPlatform: InAppWebViewOptions(
-                        mediaPlaybackRequiresUserGesture: false,
-                        debuggingEnabled: true,
-                      ),
+                  initialUrl: url,
+                  initialOptions: InAppWebViewGroupOptions(
+                    crossPlatform: InAppWebViewOptions(
+                      mediaPlaybackRequiresUserGesture: false,
+                      debuggingEnabled: true,
                     ),
-                    onWebViewCreated: (InAppWebViewController controller) {
-                      webView = controller;
-                    },
-                    onProgressChanged:
-                        (InAppWebViewController controller, int progress) {
-                      setState(() {
-                        this.progress = progress / 100;
-                      });
-                    },
-                    androidOnPermissionRequest:
-                        (InAppWebViewController controller, String origin,
-                            List<String> resources) async {
-                      return PermissionRequestResponse(
-                          resources: resources,
-                          action: PermissionRequestResponseAction.GRANT);
-                    }),
+                  ),
+                  onWebViewCreated: (InAppWebViewController controller) {
+                    webView = controller;
+                  },
+                  onProgressChanged:
+                      (InAppWebViewController controller, int progress) {
+                    setState(() {
+                      this.progress = progress / 100;
+                    });
+                  },
+                  androidOnPermissionRequest:
+                      (InAppWebViewController controller, String origin,
+                          List<String> resources) async {
+                    return PermissionRequestResponse(
+                        resources: resources,
+                        action: PermissionRequestResponseAction.GRANT);
+                  },
+//                  androidOnGeolocationPermissionsShowPrompt:
+//                      (InAppWebViewController controller, String origin) {
+//                    return Future<GeolocationPermissionShowPromptResponse>();
+//                  },
+                ),
               ),
             ),
             Container(
