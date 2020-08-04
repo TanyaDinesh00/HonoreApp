@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-String url = "http://www.google.com/";
-//https://webcamtests.com/
-//http://pihms.co.in/
+String url = "http://pihms.co.in/";
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
