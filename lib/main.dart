@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-String url = "http://pihms.co.in/";
+String url = "http://pragathiinfotech.com:9494/";
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,60 +42,68 @@ class _InAppWebViewPageState extends State<InAppWebViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue,
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                child: InAppWebView(
-                  initialUrl: url,
-                  initialOptions: InAppWebViewGroupOptions(
-                    crossPlatform: InAppWebViewOptions(
-                      mediaPlaybackRequiresUserGesture: false,
-                      debuggingEnabled: true,
+    return WillPopScope(
+      onWillPop: () {
+        if (webView != null) {
+          webView.goBack();
+        }
+        return;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.blue,
+        body: SafeArea(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: InAppWebView(
+                    initialUrl: url,
+                    initialOptions: InAppWebViewGroupOptions(
+                      crossPlatform: InAppWebViewOptions(
+                        mediaPlaybackRequiresUserGesture: false,
+                        debuggingEnabled: true,
+                      ),
                     ),
-                  ),
-                  onWebViewCreated: (InAppWebViewController controller) {
-                    webView = controller;
-                  },
-                  onProgressChanged:
-                      (InAppWebViewController controller, int progress) {
-                    setState(() {
-                      this.progress = progress / 100;
-                    });
-                  },
-                  androidOnPermissionRequest:
-                      (InAppWebViewController controller, String origin,
-                          List<String> resources) async {
-                    return PermissionRequestResponse(
-                        resources: resources,
-                        action: PermissionRequestResponseAction.GRANT);
-                  },
+                    onWebViewCreated: (InAppWebViewController controller) {
+                      webView = controller;
+                    },
+                    onProgressChanged:
+                        (InAppWebViewController controller, int progress) {
+                      setState(() {
+                        this.progress = progress / 100;
+                      });
+                    },
+                    androidOnPermissionRequest:
+                        (InAppWebViewController controller, String origin,
+                            List<String> resources) async {
+                      return PermissionRequestResponse(
+                          resources: resources,
+                          action: PermissionRequestResponseAction.GRANT);
+                    },
 //                  androidOnGeolocationPermissionsShowPrompt:
 //                      (InAppWebViewController controller, String origin) {
 //                    return Future<GeolocationPermissionShowPromptResponse>();
 //                  },
+                  ),
                 ),
               ),
-            ),
-            Container(
-                //padding: EdgeInsets.all(10.0),
-                child: progress < 1.0
-                    ? LinearProgressIndicator(value: progress)
-                    : Container()),
-          ],
+              Container(
+                  //padding: EdgeInsets.all(10.0),
+                  child: progress < 1.0
+                      ? LinearProgressIndicator(value: progress)
+                      : Container()),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        child: Icon(Icons.arrow_back),
-        onPressed: () {
-          if (webView != null) {
-            webView.goBack();
-          }
-        },
+//        floatingActionButton: FloatingActionButton(
+//          backgroundColor: Colors.blue,
+//          child: Icon(Icons.arrow_back),
+//          onPressed: () {
+//            if (webView != null) {
+//              webView.goBack();
+//            }
+//          },
+//        ),
       ),
     );
   }
