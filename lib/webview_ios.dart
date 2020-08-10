@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 String url = "http://pragathiinfotech.com:9494/";
 
@@ -23,7 +22,7 @@ class _InAppWebViewPageState extends State<InAppWebViewPage> {
         return;
       },
       child: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
             children: <Widget>[
