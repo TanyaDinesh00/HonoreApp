@@ -5,7 +5,6 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 String url = "http://pragathiinfotech.com:9494/";
-
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

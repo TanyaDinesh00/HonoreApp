@@ -16,7 +16,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="PI-HMS"
+        android:label="Honore"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
     <activity
