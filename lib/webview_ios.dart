@@ -22,7 +22,7 @@ class _InAppWebViewPageState extends State<InAppWebViewPage> {
         return;
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
         body: SafeArea(
           child: Column(
             children: <Widget>[

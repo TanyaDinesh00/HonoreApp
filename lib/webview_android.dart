@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:permission_handler/permission_handler.dart';
+//import 'package:permission_handler/permission_handler.dart';
 
-String url = "http://pragathiinfotech.com:9494/";
+String url = "http://pragathiinfotech.com:9494";
+//http://pragathiinfotech.com:9494
 
 class WebViewPlugin extends StatefulWidget {
   @override
@@ -32,6 +33,8 @@ class WebViewPluginState extends State<WebViewPlugin> {
         withJavascript: true,
         withLocalStorage: true,
         withZoom: true,
+        clearCache: false,
+        clearCookies: false,
         geolocationEnabled: true,
         initialChild: Container(
           color: Colors.white,
