@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'webview_android.dart';
 import 'webview_ios.dart';
@@ -11,7 +12,9 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //await Permission.camera.request();
-  // await Permission.location.request();
+  if (Platform.isAndroid) {
+    await Permission.location.request();
+  }
 
   runApp(MyApp());
 }

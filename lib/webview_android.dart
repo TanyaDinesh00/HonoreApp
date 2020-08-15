@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 //import 'package:permission_handler/permission_handler.dart';
 
-String url = "http://pragathiinfotech.com:9494";
+String url = "http://google.com";
 //http://pragathiinfotech.com:9494
 
 class WebViewPlugin extends StatefulWidget {
